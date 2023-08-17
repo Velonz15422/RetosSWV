@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "27ade20a-25fb-42c0-a0ff-759ab58c735f",
+		"name": "isv-20232",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4077775"
+	},
+	"item": [
+		{
+			"name": "SOAP - get country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n\t\t\t\t  xmlns:gs=\"http://udem.edu.co/isv/soap\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <gs:getCountryRequest>\n         <gs:name>Colombia</gs:name>\n      </gs:getCountryRequest>\n   </soapenv:Body>\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
