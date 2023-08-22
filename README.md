@@ -17,7 +17,16 @@ Por lo general, todos los ejemplos serán realizados usando como herramientas:
 
 Este ejemplo fue realizado siguiendo el tutorial disponible en https://spring.io/guides/gs/producing-web-service/
 
+
+## Tarea 1: 
 Con base en este ejemplo trabajado en clase implemente las siguientes funcionalidades:
 * Registrar país.
 * Listar todos los países.
 * Eliminar país.
+
+
+# Tema 2: REST - Representational State Transfer
+Este ejemplo expone una API REST básica que retorna un saludo como respuesta. El saludo simple puede ser consumido en:  
+http://localhost:8080/greeting y el saludo a un nombre en particular en: http://localhost:8080/greeting/{cualquier_nombre}
+
+Para acceder a la herramienta OpenAPI basta con navegar a: http://localhost:8080/swagger-ui.html
