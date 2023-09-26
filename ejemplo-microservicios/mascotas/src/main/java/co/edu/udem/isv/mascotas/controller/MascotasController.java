@@ -47,5 +47,16 @@ public class MascotasController {
         return this.mascotaService.crearMascota(mascotaDto);
     }
 
+    @Operation(summary = "Listar mascota por id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Mascota listada exitosamente",
+                    content = @Content(schema = @Schema(implementation = MascotaDto.class))),
+            @ApiResponse(responseCode = "404", description = "Mascota no encontrada")
+    })
+    @GetMapping("/{id}")
+    public MascotaDto listarMascotaPorId(@PathVariable Long id) {
+        log.info("Llamado a listar mascota por id: {}", id);
+        return mascotaService.listarMascotaPorId(id);
+    }
 
 }

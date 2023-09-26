@@ -1,6 +1,7 @@
 package co.edu.udem.isv.mascotas.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 
 @Entity
@@ -10,7 +11,11 @@ public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "El tipo de la mascota no puede ser nulo o estar vacío")
     private String tipo;
+
+    @NotBlank(message = "Los nombres de la mascota no pueden ser nulos o estar vacíos")
     private String nombres;
 
     public Long getId() {

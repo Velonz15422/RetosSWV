@@ -7,13 +7,6 @@ import org.mapstruct.Mapper;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface MascotaMapper {
+public interface MascotaMapper extends MapperBase<MascotaDto, Mascota> {
 
-    MascotaDto aDto(Mascota mascota);
-
-    Mascota aEntidad(MascotaDto mascotaDto);
-
-    List<MascotaDto> aDto(List<Mascota> mascotas);
-
-    List<Mascota> aEntidad(List<MascotaDto> mascotasDtos);
 }
