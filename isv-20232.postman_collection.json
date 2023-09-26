@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n\t\t\t\t  xmlns:gs=\"http://udem.edu.co/isv/soap\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <gs:getCountryRequest>\n         <gs:name>Colombia</gs:name>\n      </gs:getCountryRequest>\n   </soapenv:Body>\n</soapenv:Envelope>"
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n\t\t\t\t  xmlns:gs=\"http://udem.edu.co/isv/ejemplo-soap\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <gs:getCountryRequest>\n         <gs:name>Poland</gs:name>\n      </gs:getCountryRequest>\n   </soapenv:Body>\n</soapenv:Envelope>"
 				},
 				"url": {
 					"raw": "http://localhost:8080/ws",
@@ -69,6 +69,49 @@
 					"path": [
 						"greeting",
 						"pedro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GRAPHQL - get recent posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  recentPosts (count: 2, offset: 0) {\n    title\n    id\n    author {\n        id\n        name\n    }\n    \n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GRAPHQL - create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"graphql"
 					]
 				}
 			},
