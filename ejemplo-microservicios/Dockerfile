@@ -1,6 +1,6 @@
 FROM eclipse-temurin:17-jdk-alpine
 
-ARG WAR_FILE=./target/*.jar
+ARG WAR_FILE=./mascotas/target/*.jar
 
 COPY ${WAR_FILE} webapp.jar
 
