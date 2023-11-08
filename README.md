@@ -12,6 +12,9 @@ Por lo general, todos los ejemplos serán realizados usando como herramientas:
 - Docker Desktop.
 - SourceTree.
 
+# TAREAS: PRIMERA PARTE
+
+---
 
 # Tema 1: SOAP - Simple Object Access Protocol
 
@@ -52,3 +55,35 @@ Crear una aplicación con gRPC que exponga 4 métodos remotos:
 * dividir
 
 Todos los métodos deben recibir como parámetros dos números decimales y retornar un valor decimal.
+
+# Tema 4: GraphQL
+Este ejemplo ha sido desarrollado siguiendo como guía el tutorial disponible en: https://www.baeldung.com/spring-graphql.
+Provee funcionalidades para consultar información acerca de posts y sus autores. El servidor está disponible en la URL: http://localhost:8080/graphql. 
+La colección de Postman disponible en el proyecto contiene llamados para consumir los recursos.
+
+
+## Tarea 4:
+Modificar la aplicación para que la información consultada en los DAOs provenga de una base de datos en memoria (H2) y que se apoye en Spring Data.
+
+
+# TAREAS: SEGUNDA PARTE
+
+---
+
+# Tema 5: Testing
+Las pruebas unitarias y de integración juegan un papel crucial para garantizar la calidad de un producto de software. La planeación, implementación y mantenimiento 
+de éstas impactará de manera significativa los tiempos de desarrollo y la capacidad para agregar nuevas funcionalidades.
+
+
+## Tarea 5:
+Seguir el tutorial expuesto en la página: https://developer.okta.com/blog/2019/03/28/test-java-spring-boot-junit5. Agregar una nueva funcionalidad que permita determinar
+el número de años, meses, semanas, días, horas, minutos y segundos que han transcurrido desde la fecha de nacimiento ingresada. Agregar sus respectivos tests.
+
+
+# Tema 6: Kubernetes (K8S)
+En el medio actual, donde la nube se ha convertido en una pieza fundamental en el desarrollo de software y donde la cultura DEVOPS ha permeado toda la industria,
+K8S surge como una herramienta vital para orquestar el despliegue contenerizado de aplicaciones. Comprender sus elementos básicos resulta relevante para cualquier
+desarrollador de software bien informado.
+
+## Tarea 6:
+Realizar el tutorial expuesto en: https://learnk8s.io/spring-boot-kubernetes-guide. Desplegarlo de manera local usando Minikube.
