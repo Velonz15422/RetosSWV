@@ -1,3 +1,75 @@
+# POSTMAN
+# SOAP
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://udem.edu.co/isv/ejemplo-soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:getCountryRequest>
+            <web:name>Colombia</web:name>
+        </web:getCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://udem.edu.co/isv/ejemplo-soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:registerCountryRequest>
+            <web:country>
+                <web:name>Colombia</web:name>
+                <web:population>50882891</web:population>
+                <web:capital>Bogotá</web:capital>
+                <web:currency>Peso</web:currency>
+            </web:country>
+        </web:registerCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://udem.edu.co/isv/ejemplo-soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:deleteCountryRequest>
+            <web:name>Colombia</web:name>
+        </web:deleteCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://udem.edu.co/isv/ejemplo-soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:getAllCountriesRequest/>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+# REST
+localhost:8080/swagger-ui.html
+ # GRPC
+Para cualquier método
+{
+  "numero1": 5.0,
+  "numero2": 3.0
+} 
+
+# GraphQL
+{
+  "query": "mutation CreateAuthor($name: String!, $thumbnail: String!) { createAuthor(name: $name, thumbnail: $thumbnail) { id name thumbnail } }",
+  "variables": {
+    "name": "",
+    "thumbnail": "URL IMAGEN"
+  }
+}
+
+{
+  "query": "mutation { createPost( title: \"Nuevo título\", text: \"Contenido del post\", category: \"Nueva categoría\", authorId: \"9b558386-c014-457f-8e3a-a698b5bea1d1\" ) { id title text category author { id name thumbnail } } }"
+}
+
+
+
+
 # Repositorio para el curso Ingeniería de Software V - UdeM
 
 Este repositorio contendrá todos los ejemplos desarrollados durante el semestre. 
