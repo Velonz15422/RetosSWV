@@ -1,11 +1,21 @@
 package co.edu.udem.isv.ejemplographql.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+import java.time.LocalDateTime;
+import java.util.Date;
+
+@Entity
 public class Post {
+    @Id
     private String id;
     private String title;
     private String text;
     private String category;
     private String authorId;
+
 
     public String getId() {
         return id;

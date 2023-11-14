@@ -8,6 +8,8 @@ import org.springframework.util.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 @Component
 public class CountryRepository {
@@ -45,4 +47,21 @@ public class CountryRepository {
         Assert.notNull(name, "The country's name must not be null");
         return countries.get(name);
     }
+
+
+    public void registerCountry(Country country) {
+        Assert.notNull(country, "Country must not be null");
+        Assert.notNull(country.getName(), "Country name must not be null");
+        countries.put(country.getName(), country);
+    }
+
+    public void deleteCountry(String name) {
+        Assert.notNull(name, "Country name must not be null");
+        countries.remove(name);
+    }
+    public List<Country> getAllCountries() {
+        return new ArrayList<>(countries.values());
+    }
+
+
 }

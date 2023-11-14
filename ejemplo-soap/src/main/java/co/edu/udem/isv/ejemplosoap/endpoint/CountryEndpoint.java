@@ -1,7 +1,6 @@
 package co.edu.udem.isv.ejemplosoap.endpoint;
 
-import co.edu.udem.isv.ejemplo_soap.GetCountryRequest;
-import co.edu.udem.isv.ejemplo_soap.GetCountryResponse;
+import co.edu.udem.isv.ejemplo_soap.*;
 import co.edu.udem.isv.ejemplosoap.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -29,4 +28,35 @@ public class CountryEndpoint {
 
         return response;
     }
+
+
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "registerCountryRequest")
+    @ResponsePayload
+    public RegisterCountryResponse registerCountry(@RequestPayload RegisterCountryRequest request) {
+        RegisterCountryResponse response = new RegisterCountryResponse();
+        countryRepository.registerCountry(request.getCountry());
+        response.setMessage("Country registered successfully");
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteCountryRequest")
+    @ResponsePayload
+    public DeleteCountryResponse deleteCountry(@RequestPayload DeleteCountryRequest request) {
+        DeleteCountryResponse response = new DeleteCountryResponse();
+        countryRepository.deleteCountry(request.getName());
+        response.setMessage("Country deleted successfully");
+        return response;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getAllCountriesRequest")
+    @ResponsePayload
+    public GetAllCountriesResponse getAllCountries() {
+        GetAllCountriesResponse response = new GetAllCountriesResponse();
+        response.getCountries().addAll(countryRepository.getAllCountries());
+        return response;
+    }
+
+
+
 }
